@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/20 15:25:43 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/20 18:50:36 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 {
-	int	i;
-	int	value;
+	int				i;
+	char			*endptr;
+	long long int	value;
 
 	i = 1;
 	while (i < argc)
 	{
+		value = strtoll(argv[i], &endptr, 10);
 		if (ft_isalpha(argv[i][0]) == 1
-			|| (value >= INT_MAX || value <= INT_MIN))
+			|| (value > INT_MAX || value < INT_MIN))
 		{
-			value = ft_atoi(argv[i]);
 			write (1, "Error\n", 7);
 			free (stack_a);
 			free (stack_b);
@@ -33,9 +34,9 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 	}
 	if (i < 2)
 	{
+		write (1, "Error\n", 7);
 		free (stack_a);
 		free (stack_b);
-		write (1, "Error\n", 7);
 		exit(0);
 	}
 	check_duplicates(argc, argv, stack_a, stack_b);
@@ -48,10 +49,10 @@ void	check_duplicates(int argc, char *argv[], int *stack_a, int *stack_b)
 	int	value_a;
 	int	value_b;
 
-	i = 0;
+	i = 1;
 	while (argv[i] != NULL)
 	{
-		j = 1;
+		j = i + 1;
 		value_a = ft_atoi(argv[i]);
 		while (argv[j] != NULL)
 		{
@@ -105,4 +106,33 @@ int	ft_isalpha(int c)
 		return (1);
 	else
 		return (0);
+}
+
+long long int	ft_strtoll(const char *nptr, char **endptr, int base)
+{
+	long long int	result;
+	int				i;
+	int				vorzeichen;
+
+	result = 0;
+	i = 0;
+	vorzeichen = 1;
+	while (nptr[i] == '\t' || nptr[i] == '\v' || nptr[i] == '\n'
+		|| nptr[i] == '\r' || nptr[i] == '\f' || nptr[i] == 32)
+		i++;
+	if (nptr[i] == '+')
+		i++;
+	else if (nptr[i] == '-')
+	{
+		vorzeichen *= -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9' && nptr[i] != 0)
+	{
+		result += nptr[i] - '0';
+		result *= base;
+		i++;
+	}
+	result /= base;
+	return (result * vorzeichen);
 }
