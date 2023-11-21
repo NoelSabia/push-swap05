@@ -4,6 +4,9 @@
 - https://github.com/pasqualerossi/Push_Swap
 
 # Grundfunktionen schreiben
+### push_in_stacks
+-eingegebene Zahlen werden in stack_a eingelagert
+
 ### sa
 
 ### sb
@@ -11,8 +14,6 @@
 ### pa
 
 ### pb 
-
-### ra
 
 ### ra
 
@@ -30,6 +31,8 @@
 - checkt auf duplicates
 
 ### check_if_sorted()
+- handelt negative und positive zahlen
+- gibt 0 bei false und 1 bei true zurueck
 
 # Sortierlogik
 

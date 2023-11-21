@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_in_stacks.c                                   :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 10:51:41 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/21 11:27:15 by nsabia           ###   ########.fr       */
+/*   Created: 2023/11/21 11:42:42 by nsabia            #+#    #+#             */
+/*   Updated: 2023/11/21 14:26:42 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-int	*push_in_stack(int argc, char *argv[], int *stack_a)
+int	is_sorted(int argc, int *stack)
 {
 	int	i;
-	int	value;
 
 	i = 1;
 	while (i < argc)
 	{
-		value = ft_atoi(argv[i]);
-		stack_a[i - 1] = value;
+		if (stack[i] < stack[i - 1])
+			return (0);
 		i++;
 	}
-	stack_a[argc - 1] = '\0';
-	return (stack_a);
+	return (1);
 }

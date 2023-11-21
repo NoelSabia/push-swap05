@@ -6,22 +6,21 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/21 11:31:04 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/21 14:27:04 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 {
 	int				i;
-	char			*endptr;
 	long long int	value;
 
 	i = 1;
 	while (i < argc)
 	{
-		value = strtoll(argv[i], &endptr, 10);
+		value = ft_strtoll(argv[i], 10);
 		if (ft_isalpha(argv[i][0]) == 1 || (value > INT_MAX || value < INT_MIN))
 		{
 			write (1, "Error\n", 7);
@@ -38,10 +37,10 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 		free (stack_b);
 		exit(0);
 	}
-	check_duplicates(argc, argv, stack_a, stack_b);
+	check_duplicates(argv, stack_a, stack_b);
 }
 
-void	check_duplicates(int argc, char *argv[], int *stack_a, int *stack_b)
+void	check_duplicates(char *argv[], int *stack_a, int *stack_b)
 {
 	int	i;
 	int	j;
@@ -107,7 +106,7 @@ int	ft_isalpha(int c)
 		return (0);
 }
 
-long long int	ft_strtoll(const char *nptr, char **endptr, int base)
+long long int	ft_strtoll(const char *nptr, int base)
 {
 	long long int	result;
 	int				i;
