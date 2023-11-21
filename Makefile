@@ -8,7 +8,17 @@ OBJ_PATH = obj/
 SRC		= main.c \
 			check_parameters.c\
 			is_sorted.c\
-			push_in_stacks.c
+			push_in_stacks.c\
+			pa.c\
+			pb.c\
+			ra.c\
+			rb.c\
+			rra.c\
+			rrb.c\
+			sa.c\
+			sb.c\
+			split.c\
+			split_helper.c
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
