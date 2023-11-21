@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/20 18:50:36 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/21 11:31:04 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 	while (i < argc)
 	{
 		value = strtoll(argv[i], &endptr, 10);
-		if (ft_isalpha(argv[i][0]) == 1
-			|| (value > INT_MAX || value < INT_MIN))
+		if (ft_isalpha(argv[i][0]) == 1 || (value > INT_MAX || value < INT_MIN))
 		{
 			write (1, "Error\n", 7);
 			free (stack_a);
