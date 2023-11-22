@@ -6,11 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:38:16 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/21 18:56:28 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/22 16:17:18 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -79,12 +79,19 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (src[i] != '\0' && ((i + 1) < dstsize))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	if (i < dstsize)
+		dst[i] = '\0';
+	while (src[i] != 0)
 		i++;
 	return (i);
 }

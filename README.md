@@ -5,7 +5,8 @@
 
 # Grundfunktionen schreiben
 ### push_in_stacks
--eingegebene Zahlen werden in stack_a eingelagert
+- eingegebene Zahlen werden in stack_a eingelagert
+- egal ob argumente in " " oder nicht
 
 ### sa
 

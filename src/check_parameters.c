@@ -6,11 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/21 14:27:04 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/22 16:38:08 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 {

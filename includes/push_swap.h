@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/21 18:55:44 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/22 16:15:35 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ size_t			ft_strlen(const char *s);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s);
 size_t			ft_strlen(const char *s);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int				*string_in_stack(char *argv, int *stack_a);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:14:19 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/21 18:52:50 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/22 16:18:01 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static void	*ft_memset(void *s, int c, size_t len)
 {
