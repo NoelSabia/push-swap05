@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/22 16:38:08 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/23 16:13:20 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 		exit(0);
 	}
 	check_duplicates(argv, stack_a, stack_b);
+	check_parameters_stack_a(stack_a, stack_b);
 }
 
 void	check_duplicates(char *argv[], int *stack_a, int *stack_b)

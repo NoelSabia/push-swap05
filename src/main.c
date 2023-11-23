@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/22 11:19:56 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/23 18:43:35 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,13 @@ int	main(int argc, char *argv[])
 		write (1, "Error\n", 7);
 		exit (1);
 	}
-	// argv_string_handling(argc, argv);
-	stack_a = push_in_stack(argc, argv, stack_a);
+	stack_a = push_in_stack(argc, argv, stack_a, stack_b);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d %d\n", stack_a[i], stack_b[i]);
+	}
 	check_parameters(argc, argv, stack_a, stack_b);
 	push_swap(stack_a, argc);
-	for (int i = 0; i < argc - 1; i++)
-	{
-		printf("%d\n", stack_a[i]);
-	}
 	free (stack_a);
 	free (stack_b);
 	return (0);
