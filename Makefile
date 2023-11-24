@@ -17,7 +17,9 @@ SRC		= main.c \
 			rra.c\
 			rrb.c\
 			sa.c\
-			sb.c
+			sb.c\
+			tiny_sort.c\
+			sort.c
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)

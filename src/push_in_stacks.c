@@ -6,13 +6,13 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:51:41 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 11:44:50 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 13:34:22 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	*push_in_stack(int argc, char *argv[], int *stack_a, int *stack_b)
+int	*push_in_stack(int *stack_size, char *argv[], int *stack_a, int *stack_b)
 {
 	int	i;
 	int	j;
@@ -20,7 +20,7 @@ int	*push_in_stack(int argc, char *argv[], int *stack_a, int *stack_b)
 
 	i = 1;
 	j = 0;
-	while (i < argc)
+	while (argv[i] != NULL)
 	{
 		if (ft_strlen(argv[i]) > 1 && ft_strchr_int(argv[i], 32) == 1)
 			j = string_in_stack(argv[i], stack_a, stack_b, j);
@@ -33,6 +33,7 @@ int	*push_in_stack(int argc, char *argv[], int *stack_a, int *stack_b)
 		i++;
 	}
 	check_if_only_numbers(stack_a, stack_b, j);
+	*stack_size = j;
 	return (stack_a);
 }
 

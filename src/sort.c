@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 14:34:23 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 14:35:09 by nsabia           ###   ########.fr       */
+/*   Created: 2023/11/24 14:17:10 by nsabia            #+#    #+#             */
+/*   Updated: 2023/11/24 14:35:32 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-void	sa(int *stack_a)
+void	sort(int *stack_a, int *stack_b)
 {
 	int i = 0;
-	printf("sa: %d", stack_a[i]);
+	printf("sort: %d %d", stack_a[i], stack_b[i]);
 }
