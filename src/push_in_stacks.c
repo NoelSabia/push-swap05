@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:51:41 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/23 15:40:47 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:29:49 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	*push_in_stack(int argc, char *argv[], int *stack_a, int *stack_b)
 		}
 		i++;
 	}
+	check_if_only_numbers(stack_a, stack_b, j);
 	return (stack_a);
 }
 
@@ -63,6 +64,29 @@ int	string_in_stack(char *argv, int *stack_a, int *stack_b, int i)
 	}
 	return (i);
 }
+
+void	check_if_only_numbers(int *stack_a, int *stack_b, int j)
+{
+	int	i;
+
+	i = 0;
+	while (i <= j)
+	{
+		if ((stack_a[i] >= INT_MIN && stack_a[i] <= INT_MAX))
+		{
+			i++;
+			continue ;
+		}
+		else
+		{
+			write (1, "Error\n", 7);
+			free (stack_a);
+			free (stack_b);
+			exit(0);
+		}
+	}
+}
+
 
 int	ft_strchr_int(const char *s, int c)
 {

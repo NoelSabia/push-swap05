@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/23 16:25:04 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:16:09 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int				ft_strchr_int(const char *s, int c);
 int				string_in_stack(char *argv, int *stack_a, int *stack_b, int i);
 void			check_parameters_stack_a(int *stack_a, int *stack_b);
-void			check_if_only_numbers(int *stack_a, int *stack_b);
+void			check_if_only_numbers(int *stack_a, int *stack_b, int j);
 void			check_duplicates_stack_a(int *stack_a, int *stack_b);
 
 #endif
