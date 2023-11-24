@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:51:41 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 11:29:49 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:44:50 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	*push_in_stack(int argc, char *argv[], int *stack_a, int *stack_b)
 			j = string_in_stack(argv[i], stack_a, stack_b, j);
 		else
 		{
-			value = ft_atoi(argv[i]);
+			value = safe_atoi(argv[i], stack_a, stack_b);
 			stack_a[j] = value;
 			j++;
 		}
@@ -46,7 +46,7 @@ int	string_in_stack(char *argv, int *stack_a, int *stack_b, int i)
 	{
 		if (argv[j] >= '0' && argv[j] <= '9')
 		{
-			value = ft_atoi(&argv[j]);
+			value = safe_atoi(&argv[j], stack_a, stack_b);
 			stack_a[i] = value;
 			i++;
 			while (argv[j] >= '0' && argv[j] <= '9')
@@ -86,7 +86,6 @@ void	check_if_only_numbers(int *stack_a, int *stack_b, int j)
 		}
 	}
 }
-
 
 int	ft_strchr_int(const char *s, int c)
 {

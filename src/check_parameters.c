@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/23 16:13:20 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:44:04 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,33 +70,38 @@ void	check_duplicates(char *argv[], int *stack_a, int *stack_b)
 	}
 }
 
-int	ft_atoi(const char *nptr)
+int	safe_atoi(char *str, int *stack_a, int *stack_b)
 {
-	long	result;
-	int		i;
-	int		vorzeichen;
+	long	num;
+	int		sign;
 
-	result = 0;
-	i = 0;
-	vorzeichen = 1;
-	while (nptr[i] == '\t' || nptr[i] == '\v' || nptr[i] == '\n'
-		|| nptr[i] == '\r' || nptr[i] == '\f' || nptr[i] == 32)
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
+	num = 0;
+	sign = 1;
+	if (*str == '-')
 	{
-		vorzeichen *= -1;
-		i++;
+		sign = -1;
+		str++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9' && nptr[i] != 0)
+	while (*str >= '0' && *str <= '9')
 	{
-		result += nptr[i] - '0';
-		result *= 10;
-		i++;
+		num = num * 10 + (*str - '0');
+		if (sign == 1 && num > INT_MAX)
+		{
+			write(1, "Error\n", 7);
+			free (stack_a);
+			free (stack_b);
+			exit(0);
+		}
+		else if (sign == -1 && -num < INT_MIN)
+		{
+			write(1, "Error\n", 7);
+			free (stack_a);
+			free (stack_b);
+			exit(0);
+		}
+		str++;
 	}
-	result /= 10;
-	return ((int)result * vorzeichen);
+	return ((int)num * sign);
 }
 
 int	ft_isalpha(int c)

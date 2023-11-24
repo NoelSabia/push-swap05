@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 11:16:09 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 11:46:37 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int				*push_in_stack(int argc, char *argv[],
 void			check_duplicates(char *argv[], int *stack_a, int *stack_b);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_isalpha(int c);
+int				safe_atoi(char *str, int *stack_a, int *stack_b);
 int				ft_atoi(const char *nptr);
 long long int	ft_strtoll(const char *nptr, int base);
 int				is_sorted(int argc, int *stack);
