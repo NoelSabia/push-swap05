@@ -51,3 +51,8 @@
 - Zusammenfügen der Stacks: Nachdem beide Stacks sortiert sind, fügst du sie wieder zusammen.
 - Ausgabe auf das Terminal: Du druckst das sortierte Ergebnis auf das Terminal.
 - Speicherfreigabe: Schließlich gibst du den für die Stacks allozierten Speicher frei.
+
+
+max wert auf + 1 legen
+i--;
+naechsten wert auf + 1 legen bis man bei 0 angekommen ist

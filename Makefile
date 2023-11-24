@@ -14,8 +14,10 @@ SRC		= main.c \
 			pb.c\
 			ra.c\
 			rb.c\
+			rr.c\
 			rra.c\
 			rrb.c\
+			rrr.c\
 			sa.c\
 			sb.c\
 			tiny_sort.c\

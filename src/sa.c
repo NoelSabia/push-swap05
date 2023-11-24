@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 14:34:23 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 14:35:09 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 16:45:30 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	sa(int *stack_a)
 {
-	int i = 0;
-	printf("sa: %d", stack_a[i]);
+	int	i;
+
+	i = stack_a[0];
+	stack_a[0] = stack_a[1];
+	stack_a[1] = i;
+	write (1, "sa\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 16:16:04 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/24 17:00:11 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	push_swap(int *stack_a, int *stack_size, int *stack_b)
 	else if ((stack_len == 3) && is_sorted(stack_len, stack_a) == 0)
 		tiny_sort(stack_a);
 	else if (stack_len > 3 && is_sorted(stack_len, stack_a) == 0)
-		sort(stack_a, stack_b);
+		sort(stack_a, stack_b, stack_len);
 }
 
 int	main(int argc, char *argv[])
@@ -44,11 +44,11 @@ int	main(int argc, char *argv[])
 	}
 	stack_a = push_in_stack(stack_size, argv, stack_a, stack_b);
 	check_parameters(argc, argv, stack_a, stack_b);
+	push_swap(stack_a, stack_size, stack_b);
 	for (int i = 0; i < 15; i++)
 	{
 		printf("%d %d\n", stack_a[i], stack_b[i]);
 	}
-	push_swap(stack_a, stack_size, stack_b);
 	free (stack_a);
 	free (stack_b);
 	return (0);
