@@ -36,6 +36,11 @@
 - gibt 0 bei false und 1 bei true zurueck
 
 # Sortierlogik
+### tiny-sort()
+- sortiert 3 Elemente
+
+### sort()
+- 
 
 # Main
 - arbeiten mit int argc, char *argv[]
@@ -51,8 +56,3 @@
 - Zusammenfügen der Stacks: Nachdem beide Stacks sortiert sind, fügst du sie wieder zusammen.
 - Ausgabe auf das Terminal: Du druckst das sortierte Ergebnis auf das Terminal.
 - Speicherfreigabe: Schließlich gibst du den für die Stacks allozierten Speicher frei.
-
-
-max wert auf + 1 legen
-i--;
-naechsten wert auf + 1 legen bis man bei 0 angekommen ist

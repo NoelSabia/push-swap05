@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/27 13:58:14 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/27 15:18:19 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ int	main(int argc, char *argv[])
 	int	*stack_size;
 
 	stack_size = &stack_size_value;
-	stack_a = (int *)malloc((argc) * sizeof(int) + 1);
-	stack_b = (int *)malloc((argc) * sizeof(int) + 1);
+	stack_a = (int *)malloc((10000) * sizeof(int) + 1);
+	stack_b = (int *)malloc((10000) * sizeof(int) + 1);
 	if (!stack_a || ! stack_b)
 	{
 		write (1, "Error\n", 7);
 		free (stack_a);
 		free (stack_b);
-		exit (1);
+		exit (0);
 	}
 	stack_a = push_in_stack(stack_size, argv, stack_a, stack_b);
 	check_parameters(argc, argv, stack_a, stack_b);
