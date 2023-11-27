@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 17:00:11 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/27 13:58:14 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	push_swap(int *stack_a, int *stack_size, int *stack_b)
 	if (stack_len == 2 && is_sorted(stack_len, stack_a) == 0)
 		sa(stack_a);
 	else if ((stack_len == 3) && is_sorted(stack_len, stack_a) == 0)
-		tiny_sort(stack_a);
+		tiny_sort(stack_a, stack_len);
 	else if (stack_len > 3 && is_sorted(stack_len, stack_a) == 0)
 		sort(stack_a, stack_b, stack_len);
 }
