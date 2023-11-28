@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/27 13:58:32 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:02:29 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ void			check_parameters_stack_a(int *stack_a, int *stack_b);
 void			check_if_only_numbers(int *stack_a, int *stack_b, int j);
 void			check_duplicates_stack_a(int *stack_a, int *stack_b);
 void			tiny_sort(int *stack_a, int stack_len);
-void			sort(int *stack_a, int *stack_b, int stack_len);
+void			sort(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
+void			pa(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
+void			pb(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
 void			sa(int *stack_a);
 void			sb(int *stack_b, int stack_size);
 void			ss(int *stack_a, int stack_len);

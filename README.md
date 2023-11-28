@@ -40,6 +40,11 @@
 - sortiert 3 Elemente
 
 ### sort()
+- push 2 Nummern in stack_B
+- check nach der folgenden nummer nach den ersten zwei
+- immer die billigsten moves werden ausgefuehrt
+- wenn nur noch drei Zahlen in stack_a sind, dann tiny_sort()
+- push back to stack_a but only if right spot if not rotate stack_a until its right
 - 
 
 # Main
