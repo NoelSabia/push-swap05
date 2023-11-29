@@ -61,3 +61,14 @@
 - Zusammenfügen der Stacks: Nachdem beide Stacks sortiert sind, fügst du sie wieder zusammen.
 - Ausgabe auf das Terminal: Du druckst das sortierte Ergebnis auf das Terminal.
 - Speicherfreigabe: Schließlich gibst du den für die Stacks allozierten Speicher frei.
+
+
+array counter;
+counter_counter = 0;
+beginnend von dem ersten Element in stack_a (while loop)
+kalukation von spot to destination
+pseudo_pa (changing counter);
+find cal with lowest number
+execute the path with the lowest number
+
+immer nach oben in stack_a bringen und dann bevor man es rueberschieb entsprechend de stack_b anpassen mit durchrotieren

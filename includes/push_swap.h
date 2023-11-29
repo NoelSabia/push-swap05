@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/28 15:02:29 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/29 18:49:14 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_stack
+{
+	int	*stack;
+	int	length;
+}			t_stack;
+
 void			check_parameters(int argc, char *argv[],
 					int *stack_a, int *stack_b);
 int				*push_in_stack(int *stack_size, char *argv[],
@@ -30,6 +36,7 @@ int				safe_atoi(char *str, int *stack_a, int *stack_b);
 int				ft_atoi(const char *nptr);
 long long int	ft_strtoll(const char *nptr, int base);
 int				is_sorted(int stack_size, int *stack_a);
+int				is_sorted_backwards(int stack_size, int *stack_a);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 size_t			ft_strlen(const char *s);
 char			*ft_strchr(const char *s, int c);
@@ -48,6 +55,8 @@ void			pa(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
 void			pb(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
+void			find_cheapest_move(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
 void			sa(int *stack_a);
 void			sb(int *stack_b, int stack_size);
 void			ss(int *stack_a, int stack_len);
@@ -56,5 +65,14 @@ void			rb(int *stack_b, int stack_len);
 void			rr(int *stack_a, int *stack_b, int stack_len);
 void			rra(int *stack_a, int stack_len);
 void			rrb(int *stack_b, int stack_len);
+int				pseudo_ra(int *stack_a, int stack_len, int counter);
+int				pseudo_ra(int *stack_a, int stack_len_a, int counter);
+int				pseudo_rra(int *stack_a, int stack_len_a, int counter);
+int				pseudo_rb(int *stack_b, int len_b, int counter);
+int				pseudo_pb(int *stack_a, int stack_len_a,
+					int *stack_b, int stack_len_b, int pop_from_a, int counter);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
+int				find_spot_in_b(int number, int *stack_a,
+					int *stack_b, int counter);
 
 #endif
