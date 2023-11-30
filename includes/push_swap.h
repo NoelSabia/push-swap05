@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/29 18:49:14 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/30 18:17:25 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef struct s_stack
-{
-	int	*stack;
-	int	length;
-}			t_stack;
 
 void			check_parameters(int argc, char *argv[],
 					int *stack_a, int *stack_b);
@@ -55,8 +49,6 @@ void			pa(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
 void			pb(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
-void			find_cheapest_move(int *stack_a, int *stack_b,
-					int *stack_len_a, int *stack_len_b);
 void			sa(int *stack_a);
 void			sb(int *stack_b, int stack_size);
 void			ss(int *stack_a, int stack_len);
@@ -69,10 +61,14 @@ int				pseudo_ra(int *stack_a, int stack_len, int counter);
 int				pseudo_ra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rb(int *stack_b, int len_b, int counter);
-int				pseudo_pb(int *stack_a, int stack_len_a,
-					int *stack_b, int stack_len_b, int pop_from_a, int counter);
+int				pseudo_pb(int number, int *stack_len_b, int *stack_b);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
-int				find_spot_in_b(int number, int *stack_a,
-					int *stack_b, int counter);
-
+void			execute_cheapest(int executable, int *stack_a);
+int				find_spot_in_b(int number, int *stack_len_b, int *stack_b);
+int				find_cheapest_move(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
+int				perform_rotation(int *stack, int stack_len,
+					int number, int is_reverse);
+int				calculate_move_cost(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
 #endif

@@ -63,12 +63,8 @@
 - Speicherfreigabe: Schließlich gibst du den für die Stacks allozierten Speicher frei.
 
 
-array counter;
-counter_counter = 0;
-beginnend von dem ersten Element in stack_a (while loop)
-kalukation von spot to destination
-pseudo_pa (changing counter);
-find cal with lowest number
-execute the path with the lowest number
-
-immer nach oben in stack_a bringen und dann bevor man es rueberschieb entsprechend de stack_b anpassen mit durchrotieren
+# To-Do
+- Err_management (!, @, #, ...)
+- porblem mit abbruch fixxen
+- tatsaechlich nach stack_a verschieben
+- entsprechend zurueckverschieben

@@ -6,9 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:46:18 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/30 17:42:49 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/11/30 19:36:37 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 int	perform_rotation(int *stack, int stack_len, int number, int is_reverse)
 {
@@ -26,7 +28,7 @@ int	perform_rotation(int *stack, int stack_len, int number, int is_reverse)
 	return (counter);
 }
 
-int calculate_move_cost(int *stack_a, int *stack_b,
+int	calculate_move_cost(int *stack_a, int *stack_b,
 			int *stack_len_a, int *stack_len_b)
 {
 	int			counter;
@@ -60,6 +62,7 @@ int	find_cheapest_move(int *stack_a, int *stack_b,
 	int	min_index;
 
 	j = 0;
+	printf("hello\n");
 	while (j < *stack_len_a)
 	{
 		costs[j] = calculate_move_cost(stack_a, stack_b,
@@ -85,15 +88,24 @@ int	find_spot_in_b(int number, int *stack_len_b, int *stack_b)
 {
 	int	len_b;
 	int	counter;
+	int	i;
 
 	len_b = *stack_len_b;
 	counter = 0;
+	i = 0;
 	while (number < stack_b[0])
 	{
 		pseudo_rb(stack_b, len_b, counter);
 		counter++;
+		i++;
+		if (i == 10000)
+			break ;
 	}
+	if (i >= 10000)
+		counter += 2;
 	pseudo_pb(number, stack_len_b, stack_b);
 	counter++;
 	return (counter);
 }
+// Die kleinste Nummer wird leider nicht vom while loop
+// aufgefangen, weshalb ich eine andere Loesung dafuer finden muss.
