@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:26:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 11:46:19 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:49:25 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,20 @@ int	ft_atoi(const char *nptr)
 	}
 	result /= 10;
 	return ((int)result * vorzeichen);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}
+
+int	is_special_sign(int c)
+{
+	if (!ft_isalpha(c) && !ft_isdigit(c))
+		return (1);
+	else
+		return (0);
 }

@@ -8,6 +8,7 @@ OBJ_PATH = obj/
 SRC		= main.c \
 			check_parameters.c\
 			check_parameters_helper.c\
+			check_parameters_helper2.c\
 			is_sorted.c\
 			push_in_stacks.c\
 			pa.c\

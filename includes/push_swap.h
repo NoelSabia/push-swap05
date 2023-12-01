@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/30 18:17:25 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:53:44 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ int				string_in_stack(char *argv, int *stack_a, int *stack_b, int i);
 void			check_parameters_stack_a(int *stack_a, int *stack_b);
 void			check_if_only_numbers(int *stack_a, int *stack_b, int j);
 void			check_duplicates_stack_a(int *stack_a, int *stack_b);
+int				ft_isdigit(int c);
+int				is_special_sign(int c);
+void			errors(int *stack_a, int *stack_b);
 void			tiny_sort(int *stack_a, int stack_len);
 void			sort(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);

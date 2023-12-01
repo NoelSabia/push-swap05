@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 11:44:04 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/01 11:54:27 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 	while (i < argc)
 	{
 		value = ft_strtoll(argv[i], 10);
-		if (ft_isalpha(argv[i][0]) == 1 || (value > INT_MAX || value < INT_MIN))
+		if (ft_isalpha(argv[i][0]) == 1 || is_special_sign(argv[i][0]) == 1
+				|| (value > INT_MAX || value < INT_MIN))
 		{
 			write (1, "Error\n", 7);
 			free (stack_a);
@@ -31,12 +32,7 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 		i++;
 	}
 	if (i < 2)
-	{
-		write (1, "Error\n", 7);
-		free (stack_a);
-		free (stack_b);
-		exit(0);
-	}
+		errors(stack_a, stack_b);
 	check_duplicates(argv, stack_a, stack_b);
 	check_parameters_stack_a(stack_a, stack_b);
 }
@@ -85,14 +81,7 @@ int	safe_atoi(char *str, int *stack_a, int *stack_b)
 	while (*str >= '0' && *str <= '9')
 	{
 		num = num * 10 + (*str - '0');
-		if (sign == 1 && num > INT_MAX)
-		{
-			write(1, "Error\n", 7);
-			free (stack_a);
-			free (stack_b);
-			exit(0);
-		}
-		else if (sign == -1 && -num < INT_MIN)
+		if ((sign == 1 && num > INT_MAX) || (sign == (-1) && (-num) < INT_MIN))
 		{
 			write(1, "Error\n", 7);
 			free (stack_a);
