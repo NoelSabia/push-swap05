@@ -64,7 +64,6 @@
 
 
 # To-Do
-- Err_management (!, @, #, ...)
 - porblem mit abbruch fixxen
 - tatsaechlich nach stack_a verschieben
 - entsprechend zurueckverschieben

@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:17:10 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/30 19:38:04 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/01 13:14:59 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	execute_cheapest(int executable, int *stack_a)
 
 }
 
-void do_exception(void)
+void	do_exception(void)
 {
 
 }
@@ -25,21 +25,22 @@ void do_exception(void)
 void	sort(int *stack_a, int *stack_b, int *stack_len_a, int *stack_len_b)
 {
 	int	len;
+	int	len_safety;
 	int	executable;
 
 	len = *stack_len_a;
+	len_safety = len;
 	pb(stack_a, stack_b, stack_len_a, stack_len_b);
 	pb(stack_a, stack_b, stack_len_a, stack_len_b);
 	if (is_sorted_backwards(*stack_len_b, stack_b) == 0)
 		sa(stack_b);
-	while (len > 3)
+	while (len_safety > 3)
 	{
-		printf("len: %d\n", len);
 		executable = find_cheapest_move(stack_a, stack_b,
 				stack_len_a, stack_len_b);
 		printf("executable: %d\n", executable);
-			execute_cheapest(executable, stack_a); //warum bricht es hier ab?
-		len--;
+			execute_cheapest(executable, stack_a);
+		len_safety--;
 	}
 	tiny_sort(stack_a, *stack_len_a);
 }
