@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:46:18 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/01 16:45:37 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/01 16:46:44 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ int	calculate_move_cost(int *stack_a, int *stack_b,
 	number = stack_a[i];
 	stack_a_clone = malloc(*stack_len_a * sizeof(int));
 	stack_b_clone = malloc(*stack_len_b * sizeof(int));
-	if (!stack_a_clone || !stack_b_clone)
-	{
-		write(1, "Error\n", 7);
-		exit(0);
-	}
 	ft_memcpy(stack_a_clone, stack_a, *stack_len_a * sizeof(int));
 	ft_memcpy(stack_b_clone, stack_b, *stack_len_b * sizeof(int));
 	if (i < *stack_len_a / 2)
