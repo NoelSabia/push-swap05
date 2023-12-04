@@ -64,6 +64,7 @@
 
 
 # To-Do
-- porblem mit abbruch fixxen
-- tatsaechlich nach stack_a verschieben
-- entsprechend zurueckverschieben
+- tatsaechlich nach stack_b verschieben
+- funktioniert so halb, verdacht liegt auf den funktionen sa, pb,... selbst
+ja ziemlich sicher die funktionen an sich
+- nur noch entsprechend zurueckverschieben

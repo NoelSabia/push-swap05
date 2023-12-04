@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:51:29 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/01 16:45:21 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/02 10:45:26 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,24 @@ int	pseudo_ra(int *stack_a, int stack_len_a, int counter)
 
 void	pseudo_pb(int number, int *stack_len_b, int **stack_b)
 {
-    int *new_stack_b;
-    int i = 0;
+	int	*new_stack_b;
+	int	i;
 
-    (*stack_len_b)++;
-    new_stack_b = (int *)malloc(*stack_len_b * sizeof(int));
-    if (!new_stack_b)
-    {
-        write(1, "Error\n", 7);
-        exit(0);
-    }
-    new_stack_b[0] = number;
-    while (i < *stack_len_b - 1)
-    {
-        new_stack_b[i + 1] = (*stack_b)[i];
-        i++;
-    }
-    *stack_b = new_stack_b;
+	i = 0;
+	(*stack_len_b)++;
+	new_stack_b = (int *)malloc(*stack_len_b * sizeof(int));
+	if (!new_stack_b)
+	{
+		write(1, "Error\n", 7);
+		exit(0);
+	}
+	new_stack_b[0] = number;
+	while (i < *stack_len_b - 1)
+	{
+		new_stack_b[i + 1] = (*stack_b)[i];
+		i++;
+	}
+	*stack_b = new_stack_b;
 }
 
 int	pseudo_rra(int *stack_a, int len_a, int counter)

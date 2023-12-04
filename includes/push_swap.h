@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/01 16:28:11 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/02 11:19:01 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,12 @@ int				pseudo_ra(int *stack_a, int stack_len, int counter);
 int				pseudo_ra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rb(int *stack_b, int len_b, int counter);
-void 			pseudo_pb(int number, int *stack_len_b, int **stack_b);
+void			pseudo_pb(int number, int *stack_len_b, int **stack_b);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
-void			execute_cheapest(int executable, int *stack_a);
+void			execute_cheapest(int executable, int *stack_a,
+					int *stack_len_a);
+int				find_pseudo_spot_in_b(int number, int *stack_len_b,
+					int *stack_b);
 int				find_spot_in_b(int number, int *stack_len_b, int *stack_b);
 int				find_cheapest_move(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
@@ -74,4 +77,7 @@ int				perform_rotation(int *stack, int stack_len,
 					int number, int is_reverse);
 int				calculate_move_cost(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
+void			do_exception(int *stack_a, int *stack_b,
+					int *stack_len_a, int *stack_len_b);
+
 #endif

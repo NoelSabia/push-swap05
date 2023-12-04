@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:46:18 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/01 16:46:44 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/02 11:51:45 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	calculate_move_cost(int *stack_a, int *stack_b,
 		counter = perform_rotation(stack_a_clone, *stack_len_a, number, 0);
 	else
 		counter = perform_rotation(stack_a_clone, *stack_len_a, number, 1);
-	counter += find_spot_in_b(stack_a_clone[0], stack_len_b, stack_b_clone);
+	counter += find_pseudo_spot_in_b(stack_a_clone[0],
+			stack_len_b, stack_b_clone);
 	i++;
 	if (i == *stack_len_a)
 		i = 0;
@@ -85,7 +86,7 @@ int	find_cheapest_move(int *stack_a, int *stack_b,
 	return (min_index);
 }
 
-int	find_spot_in_b(int number, int *stack_len_b, int *stack_b)
+int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b)
 {
 	int	len_b;
 	int	counter;
