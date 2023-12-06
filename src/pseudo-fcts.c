@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:51:29 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 14:55:50 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:25:31 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	pseudo_ra(int *stack_a, int stack_len_a, int counter)
 	return (counter);
 }
 
-void	pseudo_pb(int number, int *stack_len_b, int **stack_b)
+void	pseudo_pb(int number, int *stack_len_b, int *stack_b)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ void	pseudo_pb(int number, int *stack_len_b, int **stack_b)
 		stack_b[*stack_len_b + 1] = stack_b[*stack_len_b];
 		i--;
 	}
-	stack_b[0] = &number;
+	stack_b[0] = number;
 }
 
 int	pseudo_rra(int *stack_a, int len_a, int counter)

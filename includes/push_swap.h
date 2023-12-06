@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 15:07:35 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:26:01 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int				pseudo_ra(int *stack_a, int stack_len, int counter);
 int				pseudo_ra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rb(int *stack_b, int len_b, int counter);
-void			pseudo_pb(int number, int *stack_len_b, int **stack_b);
+void			pseudo_pb(int number, int *stack_len_b, int *stack_b);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			execute_cheapest(int executable, int *stack_a,
 					int *stack_len_a);
