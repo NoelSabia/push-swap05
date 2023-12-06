@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:46:18 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 15:26:33 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/06 17:08:55 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b_clone)
 	}
 	if (i >= 10000)
 		counter += 2;
-	pseudo_pb(number, stack_len_b, stack_b_clone);
 	counter++;
 	return (counter);
 }

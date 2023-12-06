@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:57:56 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 15:21:25 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:34:07 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rb(int *stack_b, int stack_len)
 {
-	printf("%d%d", *stack_b, stack_len);
+	printf("%d%d\n", *stack_b, stack_len);
 	// int	i;
 	// int	temp;
 

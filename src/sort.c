@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:17:10 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 14:37:21 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/06 16:42:07 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 		sa(s_b);
 		len_safety--;
 	}
-	while (len_safety >= 3)
+	while (len_safety > 3)
 	{
 		executable = find_cheapest_move(s_a, s_b, stack_len_a, stack_len_b);
 		execute_cheapest(executable, s_a, stack_len_a);
