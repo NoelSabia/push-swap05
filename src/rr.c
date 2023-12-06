@@ -6,12 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 18:03:11 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 18:53:23 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/05 19:37:03 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 static void	ra_two(int *stack_a, int stack_len)
 {
@@ -48,6 +47,7 @@ static void	rb_two(int *stack_b, int stack_len)
 		stack_b[stack_len - 1] = temp;
 	}
 }
+
 void	rr(int *stack_a, int *stack_b, int stack_len)
 {
 	ra_two(stack_a, stack_len);

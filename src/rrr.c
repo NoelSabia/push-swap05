@@ -6,12 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 18:14:14 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/24 18:54:17 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/05 18:37:31 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
 
 static void	rra_two(int *stack_a, int stack_len)
 {

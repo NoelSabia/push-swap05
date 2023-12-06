@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:46:18 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/02 11:51:45 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/06 15:07:27 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	find_cheapest_move(int *stack_a, int *stack_b,
 	return (min_index);
 }
 
-int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b)
+int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b_clone)
 {
 	int	len_b;
 	int	counter;
@@ -95,9 +95,9 @@ int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b)
 	len_b = *stack_len_b;
 	counter = 0;
 	i = 0;
-	while (number < stack_b[0])
+	while (number < stack_b_clone[0])
 	{
-		pseudo_rb(stack_b, len_b, counter);
+		pseudo_rb(stack_b_clone, len_b, counter);
 		counter++;
 		i++;
 		if (i == 10000)
@@ -105,7 +105,7 @@ int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b)
 	}
 	if (i >= 10000)
 		counter += 2;
-	pseudo_pb(number, stack_len_b, &stack_b);
+	pseudo_pb(number, stack_len_b, stack_b_clone);
 	counter++;
 	return (counter);
 }

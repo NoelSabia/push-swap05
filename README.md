@@ -64,7 +64,5 @@
 
 
 # To-Do
-- tatsaechlich nach stack_b verschieben
-- funktioniert so halb, verdacht liegt auf den funktionen sa, pb,... selbst
-ja ziemlich sicher die funktionen an sich
+- function rb veraendern und verbessern
 - nur noch entsprechend zurueckverschieben

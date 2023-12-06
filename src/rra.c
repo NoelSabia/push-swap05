@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 18:07:01 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/02 11:52:21 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/05 18:28:52 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ void	rra(int *stack_a, int stack_len)
 	}
 	write (1, "rra\n", 5);
 }
+// da lauft etwas falsch, wenn rra als letztes ausgefuhrt wird
