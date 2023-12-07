@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:17:10 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/07 15:36:18 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/07 16:46:54 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,37 @@ void	do_exception(int *stack_a, int *stack_b,
 	rb(stack_b, *stack_len_b);
 }
 
-void	rotate_back_b(int *stack_b, int *stack_len_b, int rotations)
+void	rotate_back_b(int *s_b, int *stack_len_b, int spot_safety)
 {
-	while (rotations > 0)
+	while (spot_safety > 0)
 	{
-		rrb(stack_b, *stack_len_b);
-		rotations--;
+		rrb(s_b, *stack_len_b);
+		spot_safety--;
 	}
-	rrb(stack_b, *stack_len_b);
+	rrb(s_b, *stack_len_b);
+}
+
+int	move_to_b(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
+{
+	int	executable;
+	int	spot;
+
+	executable = find_cheapest_move(s_a, s_b, stack_len_a, stack_len_b);
+	execute_cheapest(executable, s_a, stack_len_a);
+	spot = find_spot_in_b(s_a[0], stack_len_b, s_b);
+	while (spot > 0)
+	{
+		rb(s_b, *stack_len_b);
+		spot--;
+	}
+	pb(s_a, s_b, stack_len_a, stack_len_b);
+	return (spot);
 }
 
 void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 {
 	int	len;
 	int	len_safety;
-	int	executable;
-	int	spot;
 	int	spot_safety;
 
 	len = *stack_len_a - 2;
@@ -62,55 +77,9 @@ void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 	}
 	while (len_safety > 3)
 	{
-		for (int k = 0; k < *stack_len_a; k++)
-			printf("%d %d\n", s_a[k], s_b[k]);
-		executable = find_cheapest_move(s_a, s_b, stack_len_a, stack_len_b);
-		execute_cheapest(executable, s_a, stack_len_a);
-		spot = find_spot_in_b(s_a[0], stack_len_b, s_b);
-		spot_safety = spot;
-		while (spot > 0)
-		{
-			rb(s_b, *stack_len_b);
-			spot--;
-		}
-		pb(s_a, s_b, stack_len_a, stack_len_b);
+		spot_safety = move_to_b(s_a, s_b, stack_len_a, stack_len_b);
 		rotate_back_b(s_b, stack_len_b, spot_safety);
 		len_safety--;
 	}
 	tiny_sort(s_a, *stack_len_a);
-}
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	char		*a;
-	const char	*b;
-	size_t		i;
-
-	a = dst;
-	b = src;
-	i = 0;
-	if (!dst && !src)
-		return (NULL);
-	while (i < n)
-	{
-		a[i] = b[i];
-		i++;
-	}
-	return (dst);
-}
-
-int	find_spot_in_b(int number, int *stack_len_b, int *stack_b)
-{
-	int	len_b;
-	int	i;
-
-	len_b = *stack_len_b;
-	i = 1;
-	while (i < len_b)
-	{
-		if (number < stack_b[i - 1] && number > stack_b[i])
-			return (i);
-		i++;
-	}
-	return (len_b);
 }
