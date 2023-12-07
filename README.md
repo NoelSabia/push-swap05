@@ -64,6 +64,4 @@
 
 
 # To-Do
-- memoryleaks verhindern indem man pseudo-pb veraendert
-- function rb veraendern und verbessern (sollte eig schon funzen)
 - nur noch entsprechend zurueckverschieben

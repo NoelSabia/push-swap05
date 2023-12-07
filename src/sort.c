@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:17:10 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 16:42:07 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/07 15:36:18 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,39 +33,23 @@ void	do_exception(int *stack_a, int *stack_b,
 	rb(stack_b, *stack_len_b);
 }
 
-// void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
-// {
-// 	int	len;
-// 	int	len_safety;
-// 	int	executable;
-
-// 	len = *stack_len_a - 2;
-// 	len_safety = len;
-// 	pb(s_a, s_b, stack_len_a, stack_len_b);
-// 	pb(s_a, s_b, stack_len_a, stack_len_b);
-// 	if (is_sorted_backwards(*stack_len_b, s_b) == 0)
-// 	{
-// 		sa(s_b);
-// 		len_safety--;
-// 	}
-// 	while (len_safety >= 3)
-// 	{
-// 		executable = find_cheapest_move(s_a, s_b, stack_len_a, stack_len_b);
-// 		execute_cheapest(executable, s_a, stack_len_a);
-// 		if (find_spot_in_b(executable, stack_len_b, s_b) == 1)
-// 			pb(s_a, s_b, stack_len_a, stack_len_a);
-// 		else
-// 			do_exception(s_a, s_b, stack_len_a, stack_len_b);
-// 		len_safety--;
-// 	}
-// 	tiny_sort(s_a, *stack_len_a);
-// }
+void	rotate_back_b(int *stack_b, int *stack_len_b, int rotations)
+{
+	while (rotations > 0)
+	{
+		rrb(stack_b, *stack_len_b);
+		rotations--;
+	}
+	rrb(stack_b, *stack_len_b);
+}
 
 void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 {
 	int	len;
 	int	len_safety;
 	int	executable;
+	int	spot;
+	int	spot_safety;
 
 	len = *stack_len_a - 2;
 	len_safety = len;
@@ -78,25 +62,20 @@ void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 	}
 	while (len_safety > 3)
 	{
+		for (int k = 0; k < *stack_len_a; k++)
+			printf("%d %d\n", s_a[k], s_b[k]);
 		executable = find_cheapest_move(s_a, s_b, stack_len_a, stack_len_b);
 		execute_cheapest(executable, s_a, stack_len_a);
-		if (find_spot_in_b(executable, stack_len_b, s_b) == 1)
-			pb(s_a, s_b, stack_len_a, stack_len_b);
-		else
-			do_exception(s_a, s_b, stack_len_a, stack_len_b);
+		spot = find_spot_in_b(s_a[0], stack_len_b, s_b);
+		spot_safety = spot;
+		while (spot > 0)
+		{
+			rb(s_b, *stack_len_b);
+			spot--;
+		}
+		pb(s_a, s_b, stack_len_a, stack_len_b);
+		rotate_back_b(s_b, stack_len_b, spot_safety);
 		len_safety--;
-
-		printf("stack_a: ");
-		for (int i = 0; i < *stack_len_a; i++) {
-			printf("%d ", s_a[i]);
-		}
-		printf("\n");
-
-		printf("stack_b: ");
-		for (int i = 0; i < *stack_len_b; i++) {
-			printf("%d ", s_b[i]);
-		}
-		printf("\n");
 	}
 	tiny_sort(s_a, *stack_len_a);
 }
@@ -126,13 +105,12 @@ int	find_spot_in_b(int number, int *stack_len_b, int *stack_b)
 	int	i;
 
 	len_b = *stack_len_b;
-	i = 0;
-	while (number < stack_b[0])
+	i = 1;
+	while (i < len_b)
 	{
-		rb(stack_b, *stack_len_b);
+		if (number < stack_b[i - 1] && number > stack_b[i])
+			return (i);
 		i++;
-		if (i == len_b)
-			return (0);
 	}
-	return (1);
+	return (len_b);
 }
