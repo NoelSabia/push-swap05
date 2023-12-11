@@ -75,7 +75,7 @@ void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 		sa(s_b);
 		len_safety--;
 	}
-	while (len_safety > 3)
+	while (len_safety >= 3)
 	{
 		spot_safety = move_to_b(s_a, s_b, stack_len_a, stack_len_b);
 		rotate_back_b(s_b, stack_len_b, spot_safety);

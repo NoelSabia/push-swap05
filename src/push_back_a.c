@@ -15,33 +15,33 @@
 void	push_back_a(int *stack_a, int *stack_b,
 		int stack_len_a, int stack_len_b)
 {
-	while (stack_len_b > 0)
-	{
-		if (stack_b[0] > stack_a[0])
-		{
-			pa(stack_a, stack_b, &stack_len_a, &stack_len_b);
-		}
-		else
-		{
-			ra(stack_a, stack_len_a);
-			if (all_elements_less(stack_b, stack_len_b, stack_a[0]) == 0)
-			{
-				break ;
-			}
-		}
-	}
+	// while (stack_len_b > 0)
+	// {
+	// 	if (stack_b[0] > stack_a[0])
+	// 	{
+	// 		pa(stack_a, stack_b, &stack_len_a, &stack_len_b);
+	// 	}
+	// 	else
+	// 	{
+	// 		ra(stack_a, stack_len_a);
+	// 		if (all_elements_less(stack_b, stack_len_b, stack_a[0]) == 0)
+	// 		{
+	// 			break ;
+	// 		}
+	// 	}
+	// }
 }
 
-int	all_elements_less(int *stack_b, int stack_len_b, int element)
-{
-	int	i;
+// int	all_elements_less(int *stack_b, int stack_len_b, int element)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < stack_len_b)
-	{
-		if (stack_b[i] < element)
-			return (0);
-		i++;
-	}
-	return (1);
-}
+// 	i = 0;
+// 	while (i < stack_len_b)
+// 	{
+// 		if (stack_b[i] < element)
+// 			return (0);
+// 		i++;
+// 	}
+// 	return (1);
+// }
