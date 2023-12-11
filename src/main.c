@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/11 15:09:08 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/11 17:28:51 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(int argc, char *argv[])
 	check_parameters(argc, argv, stack_a, stack_b);
 	if (is_sorted(stack_size_value, stack_a) == 0)
 		push_swap(stack_a, stack_size, stack_b);
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 15; i++)
 		printf("%d %d\n", stack_a[i], stack_b[i]);
 	free (stack_a);
 	free (stack_b);

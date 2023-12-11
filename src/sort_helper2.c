@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:40:11 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/11 14:50:03 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/11 19:18:34 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,11 @@ int	find_spot_in_b(int number, int *stack_len_b, int *stack_b)
 		return (len_b);
 	return (0);
 }
+// the problem seems to be different.
+// It will execute rbb or rb until you spot > 0 is false. 
+// It cannot find a good place in the stack for that case
+// and than just pushes it. So what i want to do is not only to 
+// check if number is smaller than stack_b[0] but insted 
+// ALSO check if stack_b[*stack_len_b] is bigger 
+// than the number i want to push
+
