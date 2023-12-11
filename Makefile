@@ -26,6 +26,7 @@ SRC		= main.c \
 			sort_helper.c\
 			sort_helper2.c\
 			push_back.c\
+			push_back_a.c\
 			pseudo-fcts.c
 
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))

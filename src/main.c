@@ -6,7 +6,11 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/12/07 18:17:14 by nsabia           ###   ########.fr       */
+=======
+/*   Updated: 2023/12/07 18:27:18 by nsabia           ###   ########.fr       */
+>>>>>>> 3998feee0fbe61b8e512bf8edf8097d509ee80fe
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +33,11 @@ static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 		tiny_sort(stack_a, stack_len_a);
 	else if (stack_len_a > 3 && is_sorted(stack_len_a, stack_a) == 0)
 		sort(stack_a, stack_b, &stack_len_a, &stack_len_b);
+<<<<<<< HEAD
 	// push_back_result(stack_a, stack_b, stack_len_a, stack_len_b);
+=======
+	push_back_a(stack_a, stack_b, stack_len_a, stack_len_b);
+>>>>>>> 3998feee0fbe61b8e512bf8edf8097d509ee80fe
 }
 
 int	main(int argc, char *argv[])
