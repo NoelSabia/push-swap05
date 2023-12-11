@@ -6,11 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/12/07 18:11:04 by nsabia           ###   ########.fr       */
-=======
-/*   Updated: 2023/12/07 19:00:19 by nsabia           ###   ########.fr       */
->>>>>>> 3998feee0fbe61b8e512bf8edf8097d509ee80fe
+/*   Updated: 2023/12/11 15:12:10 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +66,11 @@ int				pseudo_rra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rb(int *stack_b, int len_b, int counter);
 void			pseudo_pb(int number, int *stack_len_b, int *stack_b);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
-<<<<<<< HEAD
-void			push_back_result(int *stack_a, int *stack_b,
-					int stack_len_a, int stack_len_b);
-=======
 void			do_exeption_a(int *stack_a, int *stack_b,
 					int stack_len_a, int stack_len_b);
 void			push_back_a(int *stack_a, int *stack_b,
 					int stack_len_a, int stack_len_b);
 int				all_elements_less(int *stack_b, int stack_len_b, int element);
->>>>>>> 3998feee0fbe61b8e512bf8edf8097d509ee80fe
 void			execute_cheapest(int executable, int *stack_a,
 					int *stack_len_a);
 int				find_pseudo_spot_in_b(int number, int *stack_len_b,
