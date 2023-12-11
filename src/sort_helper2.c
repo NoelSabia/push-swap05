@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:40:11 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/07 16:44:13 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/11 14:50:03 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ int	find_spot_in_b(int number, int *stack_len_b, int *stack_b)
 			return (i);
 		i++;
 	}
-	return (len_b);
+	if (number < stack_b[len_b - 1])
+		return (len_b);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 17:08:06 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/07 18:11:04 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int				pseudo_rra(int *stack_a, int stack_len_a, int counter);
 int				pseudo_rb(int *stack_b, int len_b, int counter);
 void			pseudo_pb(int number, int *stack_len_b, int *stack_b);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
+void			push_back_result(int *stack_a, int *stack_b,
+					int stack_len_a, int stack_len_b);
 void			execute_cheapest(int executable, int *stack_a,
 					int *stack_len_a);
 int				find_pseudo_spot_in_b(int number, int *stack_len_b,
