@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 16:46:18 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/06 17:08:55 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:51:31 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,4 +107,23 @@ int	find_pseudo_spot_in_b(int number, int *stack_len_b, int *stack_b_clone)
 		counter += 2;
 	counter++;
 	return (counter);
+}
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	char		*a;
+	const char	*b;
+	size_t		i;
+
+	a = dst;
+	b = src;
+	i = 0;
+	if (!dst && !src)
+		return (NULL);
+	while (i < n)
+	{
+		a[i] = b[i];
+		i++;
+	}
+	return (dst);
 }

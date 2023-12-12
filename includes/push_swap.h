@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/11 16:19:13 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/12 19:08:46 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,10 @@ int				calculate_move_cost(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
 void			do_exception(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
-int				find_smallest_number(int *stack_len_b, int *stack_b);
+int				find_spot_for_biggest(int number, int *stack_len_b,
+					int *stack_b);
+int				find_spot_for_smallest(int number, int *stack_len_b,
+					int *stack_b);
+int				find_smallest_diff(int *array, int *stack_len_b);
 
 #endif
