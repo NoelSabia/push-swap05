@@ -84,5 +84,6 @@ int				calculate_move_cost(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
 void			do_exception(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
+int				find_smallest_number(int *stack_len_b, int *stack_b);
 
 #endif

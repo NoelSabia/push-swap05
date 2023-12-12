@@ -86,5 +86,9 @@ void	sort(int *s_a, int *s_b, int *stack_len_a, int *stack_len_b)
 		len_safety--;
 	}
 	while (*stack_len_a > 0)
+	{
+		for (int i = 0; i < 7; i++)
+			printf("%d %d\n", s_a[i], s_b[i]);
 		move_to_b(s_a, s_b, stack_len_a, stack_len_b);
+	}
 }
