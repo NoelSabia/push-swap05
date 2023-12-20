@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:26:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/01 11:49:25 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/20 11:52:36 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	check_parameters_stack_a(int *stack_a, int *stack_b)
 	{
 		if (stack_a[i] > INT_MAX || stack_a[i] < INT_MIN)
 		{
-			write (1, "hierr\n", 7);
 			free (stack_a);
 			free (stack_b);
 			exit(0);
@@ -96,10 +95,16 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int	is_special_sign(int c)
+int	is_special_sign(char *str)
 {
-	if (!ft_isalpha(c) && !ft_isdigit(c))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (!ft_isdigit(str[i]) && str[i] != '-')
+			return (1);
+		i++;
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/11 17:28:51 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/20 15:33:58 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,14 @@
 
 static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 {
-	int	stack_len_a;
-	int	stack_len_b;
-	int	stack_size_b_value;
-	int	*stack_size_b;
+	int			i;
+	int			index[100000];
 
-	stack_size_b = &stack_size_b_value;
-	stack_size_b_value = 0;
-	stack_len_a = *stack_size_a;
-	stack_len_b = *stack_size_b;
-	if (stack_len_a == 2 && is_sorted(stack_len_a, stack_a) == 0)
-		sa(stack_a);
-	else if ((stack_len_a == 3) && is_sorted(stack_len_a, stack_a) == 0)
-		tiny_sort(stack_a, stack_len_a);
-	else if (stack_len_a > 3 && is_sorted(stack_len_a, stack_a) == 0)
-		sort(stack_a, stack_b, &stack_len_a, &stack_len_b);
+	i = -1;
+	while (++i < *stack_size_a)
+		index[i] = stack_a[i];
+	for (int i = 0; i < *stack_size_a; i++)
+		printf("%d\n", index[i]);
 }
 
 int	main(int argc, char *argv[])

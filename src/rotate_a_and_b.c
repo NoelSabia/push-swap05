@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rr.c                                               :+:      :+:    :+:   */
+/*   rotate_a_and_b.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 18:03:11 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/05 19:37:03 by nsabia           ###   ########.fr       */
+/*   Created: 2023/12/20 11:05:24 by nsabia            #+#    #+#             */
+/*   Updated: 2023/12/20 11:06:41 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,11 @@ void	rr(int *stack_a, int *stack_b, int stack_len)
 	ra_two(stack_a, stack_len);
 	rb_two(stack_b, stack_len);
 	write (1, "rr\n", 4);
+}
+
+void	ss(int *stack_a, int stack_len)
+{
+	sa_two(stack_a);
+	sb_two(stack_a, stack_len);
+	write (1, "ss\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/01 11:54:27 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/20 11:58:42 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 	while (i < argc)
 	{
 		value = ft_strtoll(argv[i], 10);
-		if (ft_isalpha(argv[i][0]) == 1 || is_special_sign(argv[i][0]) == 1
+		if (ft_isalpha(argv[i]) == 1 || is_special_sign(argv[i]) == 1
 				|| (value > INT_MAX || value < INT_MIN))
 		{
 			write (1, "Error\n", 7);
@@ -93,12 +93,18 @@ int	safe_atoi(char *str, int *stack_a, int *stack_b)
 	return ((int)num * sign);
 }
 
-int	ft_isalpha(int c)
+int	ft_isalpha(char *str)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 long long int	ft_strtoll(const char *nptr, int base)

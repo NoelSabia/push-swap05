@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra 
+CFLAGS	= -Wall -Wextra
 NAME	= push_swap
 
 SRC_PATH = src/
@@ -10,22 +10,15 @@ SRC		= main.c \
 			check_parameters_helper.c\
 			check_parameters_helper2.c\
 			is_sorted.c\
+			laying_v_sort.c\
 			push_in_stacks.c\
-			pa.c\
-			pb.c\
-			ra.c\
-			rb.c\
-			rr.c\
-			rra.c\
-			rrb.c\
-			rrr.c\
-			sa.c\
-			sb.c\
+			push.c\
+			rotate_a_and_b_helper.c\
+			rotate_a_and_b.c\
+			rotate_a.c\
+			rotate_b.c\
 			tiny_sort.c\
-			sort.c\
-			sort_helper.c\
-			sort_helper2.c\
-			pseudo-fcts.c
+
 
 SRCm	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ		= $(SRC:.c=.o)
