@@ -43,3 +43,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+//https://zainab-dnaya.medium.com/fastest-push-swap-algorithm-2f510028602b
