@@ -10,7 +10,6 @@ SRC		= main.c \
 			check_parameters_helper.c\
 			check_parameters_helper2.c\
 			is_sorted.c\
-			laying_v_sort.c\
 			push_in_stacks.c\
 			push.c\
 			rotate_a_and_b_helper.c\
@@ -18,6 +17,7 @@ SRC		= main.c \
 			rotate_a.c\
 			rotate_b.c\
 			tiny_sort.c\
+			sort_ten.c
 
 
 SRCm	= $(addprefix $(SRC_PATH), $(SRC))

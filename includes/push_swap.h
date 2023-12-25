@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/20 11:52:54 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/25 17:51:25 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+
+typedef struct s_sort
+{
+	int	*len_a;
+	int	*len_b;
+	int stack_a_arr[1000];
+}	t_sort;
 
 void			check_parameters(int argc, char *argv[],
 					int *stack_a, int *stack_b);
@@ -47,20 +55,21 @@ int				is_special_sign(char *str);
 void			tiny_sort(int *stack_a, int stack_len);
 void			sort(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
-void			pa(int *stack_a, int *stack_b,
-					int *stack_len_a, int *stack_len_b);
-void			pb(int *stack_a, int *stack_b,
-					int *stack_len_a, int *stack_len_b);
+void			pa(int *stack_a, int *stack_b, t_sort *sort);
+void			pb(int *stack_a, int *stack_b, t_sort *sort);
 void			sa(int *stack_a);
 void			sb(int *stack_b, int stack_size);
 void			ss(int *stack_a, int stack_len);
-void			ra(int *stack_a, int stack_len);
+void			ra(int *stack_a, t_sort *sort);
 void			rb(int *stack_b, int stack_len);
 void			rr(int *stack_a, int *stack_b, int stack_len);
-void			rra(int *stack_a, int stack_len);
+void			rra(int *stack_a, t_sort *sort);
 void			rrb(int *stack_b, int stack_len);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			sb_two(int *stack_b, int stack_size);
 void			sa_two(int *stack_a);
+void			sort_ten(int *stack_a, int *stack_b, t_sort *sort);
+int 			find_smallest_int(t_sort *sort);
+void			rotate_to_top(int i, int *stack_a, int num, t_sort *sort);
 
 #endif

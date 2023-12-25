@@ -3,50 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:00:44 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/20 11:03:16 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/25 17:37:08 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ra(int *stack_a, int stack_len)
+void ra(int *stack_a, t_sort *sort)
 {
-	int	i;
-	int	temp;
+    int i;
+	int	m;
+    int temp;
 
-	i = 0;
-	if (stack_len > 0)
-	{
-		temp = stack_a[0];
-		while (i < stack_len - 1)
-		{
-			stack_a[i] = stack_a[i + 1];
-			i++;
-		}
-		stack_a[stack_len - 1] = temp;
-	}
-	write (1, "ra\n", 4);
+    temp = stack_a[0];
+    i = *(sort->len_a) - 1;
+	m = 0;
+    while (i >=  0)
+    {
+        stack_a[m] = stack_a[m + 1];
+        i--;
+		m++;
+    }
+	m--;
+    stack_a[m] = temp;
+    write(1, "ra\n", 4);
 }
 
-void	rra(int *stack_a, int stack_len)
+void	rra(int *stack_a, t_sort *sort)
 {
 	int	i;
 	int	temp;
 
-	if (stack_len > 0)
+	temp = stack_a[*(sort->len_a) - 1];
+	i = *(sort->len_a) - 1;
+	while (i >= 0)
 	{
-		temp = stack_a[stack_len - 1];
-		i = stack_len - 1;
-		while (i > 0)
-		{
-			stack_a[i] = stack_a[i - 1];
-			i--;
-		}
-		stack_a[0] = temp;
+		stack_a[i] = stack_a[i - 1];
+		i--;
 	}
+	stack_a[0] = temp;
 	write (1, "rra\n", 5);
 }
 
