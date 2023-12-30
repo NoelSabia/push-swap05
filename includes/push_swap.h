@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/25 17:51:25 by noel             ###   ########.fr       */
+/*   Updated: 2023/12/30 16:55:02 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void			check_if_only_numbers(int *stack_a, int *stack_b, int j);
 void			check_duplicates_stack_a(int *stack_a, int *stack_b);
 void			errors(int *stack_a, int *stack_b);
 int				is_special_sign(char *str);
-void			tiny_sort(int *stack_a, int stack_len);
+void			tiny_sort(int *stack_a, t_sort *sort);
 void			sort(int *stack_a, int *stack_b,
 					int *stack_len_a, int *stack_len_b);
 void			pa(int *stack_a, int *stack_b, t_sort *sort);
@@ -71,5 +71,8 @@ void			sa_two(int *stack_a);
 void			sort_ten(int *stack_a, int *stack_b, t_sort *sort);
 int 			find_smallest_int(t_sort *sort);
 void			rotate_to_top(int i, int *stack_a, int num, t_sort *sort);
+void			sort_five(int *stack_a, int *stack_b, t_sort *sort);
+int				find_corr_spot(t_sort *sort, int *stack_a, int *stack_b);
+int 			find_nearest(int arr[500], int len);
 
 #endif

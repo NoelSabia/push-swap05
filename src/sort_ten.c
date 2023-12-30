@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   laying_v_sort.c                                    :+:      :+:    :+:   */
+/*   sort_ten.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:12:07 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/25 18:06:13 by noel             ###   ########.fr       */
+/*   Updated: 2023/12/30 10:58:41 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,3 @@ void	rotate_to_top(int i, int *stack_a, int num, t_sort *sort)
 			rra(stack_a, sort);
 	}
 }
-
-// find spot with smallest int
-// if oben then ra if unten rra 
-// pb

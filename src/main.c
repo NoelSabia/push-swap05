@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/25 18:55:07 by noel             ###   ########.fr       */
+/*   Updated: 2023/12/25 20:06:02 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 	*(sort->len_b) = 0;
 	while (++*(sort->len_a) <= *stack_size_a - 1)
 		sort->stack_a_arr[*(sort->len_a)] = stack_a[*(sort->len_a)];
-	// if (*(sort->len_a) <= 5)
-	// 	sort_five(stack_a, stack_b, sort);
-	if (*(sort->len_a) > 5 && *(sort->len_a)<= 10)
+	if (*(sort->len_a) <= 5)
+		sort_five(stack_a, stack_b, sort);
+	else if (*(sort->len_a) > 5 && *(sort->len_a)<= 10)
 		sort_ten(stack_a, stack_b, sort);
 	freeing(sort);
 }

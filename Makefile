@@ -17,6 +17,7 @@ SRC		= main.c \
 			rotate_a.c\
 			rotate_b.c\
 			tiny_sort.c\
+			sort_five.c\
 			sort_ten.c
 
 
