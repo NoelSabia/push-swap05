@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:06:08 by noel              #+#    #+#             */
-/*   Updated: 2024/01/04 00:10:46 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/04 00:21:41 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,15 @@ void	sort_five(int *stack_a, int *stack_b, t_sort *sort)
 		{
 			if (stack_a[i] < stack_b[0])
 				i++;
-			while (i > 0)
-			{
+			while (i-- > 0)
 				ra(stack_a, sort);
-				i--;
-			}
 		}
 		else
 		{
 			if (stack_a[i] < stack_b[0])
 				i++;
-			while (i < *(sort->len_a))
-			{
+			while (i++ < *(sort->len_a))
 				rra(stack_a, sort);
-				i++;
-			}
 		}
 		pa(stack_a, stack_b, sort);
 	}
@@ -55,16 +49,14 @@ void	sort_a(int *stack_a, t_sort *sort)
 
 	i = 0;
 	smallest = stack_a[0];
-	while (i < *(sort->len_a))
+	while (i++ < *(sort->len_a))
 	{
 		if (stack_a[i] < smallest)
 		{
 			smallest = stack_a[i];
 			s_i = i;
 			i = 0;
-			continue ;
 		}
-		i++;
 	}
 	if (s_i <= 2)	
 	{
@@ -94,9 +86,6 @@ int	find_corr_spot(t_sort *sort, int *stack_a, int *stack_b)
 	}
 	i--;
 	result = find_nearest(s, i);
-	// for (int k = 0; k < 5; k++)
-	// 	printf("arr[i]: %d\n", s[k]);
-	// printf("nearest number to zero: %d\n", result);
 	i = 0;
 	while (s[i] != result)
 		i++;
@@ -125,15 +114,5 @@ int find_nearest(int arr[500], int len)
 		i++;
 	}
 	i--;
-	// for (int k = 0; k < 5; k++)
-	// 	printf("arr[i]: %d\n", arr[k]);
-	// printf("nearest number to zero: %d\n", result);
     return (result);
 }
-
-// pushen
-// tinysort
-// diff ausrechnen zwischen s_b[0] und alle anderen Zahlen in s_a
-// die kleinste diff zu 0 finden
-// kleinste nummer zu null mit position in s_b abgleichen
-// ra oder rra und dann pushen nach a
