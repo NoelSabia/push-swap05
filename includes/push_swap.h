@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/30 16:55:02 by noel             ###   ########.fr       */
+/*   Updated: 2023/12/31 21:19:11 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void			rotate_to_top(int i, int *stack_a, int num, t_sort *sort);
 void			sort_five(int *stack_a, int *stack_b, t_sort *sort);
 int				find_corr_spot(t_sort *sort, int *stack_a, int *stack_b);
 int 			find_nearest(int arr[500], int len);
+void			sort_a(int *stack_a, t_sort *sort);
 
 #endif
