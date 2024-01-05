@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:06:08 by noel              #+#    #+#             */
-/*   Updated: 2024/01/04 00:21:41 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/05 16:52:52 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	sort_a(int *stack_a, t_sort *sort)
 
 	i = 0;
 	smallest = stack_a[0];
-	while (i++ < *(sort->len_a))
+	while (i++ < *(sort->len_a) - 1)
 	{
 		if (stack_a[i] < smallest)
 		{

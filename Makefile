@@ -18,7 +18,8 @@ SRC		= main.c \
 			rotate_b.c\
 			tiny_sort.c\
 			sort_five.c\
-			sort_ten.c
+			sort_ten.c\
+			sort_hundret.c
 
 
 SRCm	= $(addprefix $(SRC_PATH), $(SRC))

@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/31 17:53:52 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/04 17:15:57 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 		sort_five(stack_a, stack_b, sort);
 	else if (*(sort->len_a) > 5 && *(sort->len_a)<= 10)
 		sort_ten(stack_a, stack_b, sort);
+	else if (*(sort->len_a) > 10 && *(sort->len_a) <= 100)
+		sort_hundret(sort, stack_a, stack_b);
 	freeing(sort);
 }
 
