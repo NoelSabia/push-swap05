@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/04 17:15:40 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 11:48:09 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void			sa(int *stack_a);
 void			sb(int *stack_b, int stack_size);
 void			ss(int *stack_a, int stack_len);
 void			ra(int *stack_a, t_sort *sort);
-void			rb(int *stack_b, int stack_len);
+void 			rb(int *stack_b, t_sort *sort);
 void			rr(int *stack_a, int *stack_b, int stack_len);
 void			rra(int *stack_a, t_sort *sort);
-void			rrb(int *stack_b, int stack_len);
+void			rrb(int *stack_b, t_sort *sort);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			sb_two(int *stack_b, int stack_size);
 void			sa_two(int *stack_a);
@@ -76,5 +76,8 @@ int				find_corr_spot(t_sort *sort, int *stack_a, int *stack_b);
 int 			find_nearest(int arr[500], int len);
 void			sort_a(int *stack_a, t_sort *sort);
 void			sort_hundret(t_sort *sort, int *stack_a, int *stack_b);
+int				find_keynbr(t_sort *sort, int *stack_a, int n);
+int				find_biggest(t_sort *sort, int *stack_b);
+void			push_back_b(t_sort *sort, int *stack_a, int *stack_b);
 
 #endif
