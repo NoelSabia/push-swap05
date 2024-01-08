@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra
+CFLAGS	= -Wall -Wextra -Werror
 NAME	= push_swap
 
 SRC_PATH = src/
@@ -43,4 +43,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-//https://zainab-dnaya.medium.com/fastest-push-swap-algorithm-2f510028602b
