@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   tiny_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:17:31 by nsabia            #+#    #+#             */
-/*   Updated: 2023/11/27 14:43:30 by nsabia           ###   ########.fr       */
+/*   Updated: 2023/12/25 20:17:19 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	tiny_sort(int *stack_a, int stack_len)
+void	tiny_sort(int *stack_a, t_sort *sort)
 {
 	int	a;
 	int	b;
@@ -26,15 +26,15 @@ void	tiny_sort(int *stack_a, int stack_len)
 	if (a > b && b > c && c < a)
 	{
 		sa(stack_a);
-		rra(stack_a, stack_len);
+		rra(stack_a, sort);
 	}
 	if (a > b && b < c && c < a)
-		ra(stack_a, stack_len);
+		ra(stack_a, sort);
 	if (a < b && b > c && c > a)
 	{
 		sa(stack_a);
-		ra(stack_a, stack_len);
+		ra(stack_a, sort);
 	}
 	if (a < b && b > c && c < a)
-		rra(stack_a, stack_len);
+		rra(stack_a, sort);
 }
