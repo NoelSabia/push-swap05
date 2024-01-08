@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:52:53 by noel              #+#    #+#             */
-/*   Updated: 2024/01/08 14:18:31 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/08 19:59:17 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_hundret(t_sort *sort, int *stack_a, int *stack_b)
 	c = 0;
 	n_safe = *(sort->len_a) / 4;
 	n = 0;
-	while (c < 4)
+	while (c <= 4)
 	{
 		i = 0;
 		n = n + n_safe;
@@ -48,16 +48,39 @@ void	push_back_b(t_sort *sort, int *stack_a, int *stack_b)
 {
 	int	i;
 
-	i = 0;
 	while (*(sort->len_b) > 0)
 	{
-		if (find_biggest(sort, stack_b) < *(sort->len_b) / 2)
+		i = find_spot_biggest(sort, stack_a, stack_b);
+		if (stack_b[0] == find_biggest(sort, stack_b))
+			pa(stack_a, stack_b, sort);
+		if (i < *(sort->len_b) / 2)
 			rb(stack_b, sort);
 		else
 			rrb(stack_b, sort);
-		if (stack_b[i] == find_biggest(sort, stack_b))
-			pa(stack_a, stack_b, sort);
 	}
+}
+
+int	find_spot_biggest(t_sort *sort, int *stack_a, int *stack_b)
+{
+	int	i;
+	int	biggest_num;
+
+	i = 0;
+	biggest_num = stack_b[0];
+	while (i < *(sort->len_b))
+	{
+		if (stack_b[i] > biggest_num)
+		{
+			biggest_num = stack_b[i];
+			i = 0;
+			continue ;
+		}
+		i++;
+	}
+	i = 0;
+	while (stack_a[i] < biggest_num)
+		i++;
+	return (i);
 }
 
 int	find_biggest(t_sort *sort, int *stack_b)

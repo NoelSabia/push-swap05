@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:00:44 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 14:10:49 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/08 17:16:24 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ra(int *stack_a, t_sort *sort)
 	}
 	m--;
 	stack_a[m] = temp;
-	write(1, "ra\n", 4);
+	write(1, "ra\n", 3);
 }
 
 void	rra(int *stack_a, t_sort *sort)
@@ -45,7 +45,7 @@ void	rra(int *stack_a, t_sort *sort)
 		i--;
 	}
 	stack_a[0] = temp;
-	write (1, "rra\n", 5);
+	write (1, "rra\n", 4);
 }
 
 void	sa(int *stack_a)
@@ -55,5 +55,5 @@ void	sa(int *stack_a)
 	i = stack_a[0];
 	stack_a[0] = stack_a[1];
 	stack_a[1] = i;
-	write (1, "sa\n", 4);
+	write (1, "sa\n", 3);
 }

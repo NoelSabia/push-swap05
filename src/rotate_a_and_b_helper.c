@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:05:15 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 14:20:38 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/08 17:17:18 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	rrr(int *stack_a, int *stack_b, int stack_len)
 {
 	rra_two(stack_a, stack_len);
 	rrb_two(stack_b, stack_len);
-	write (1, "rrr\n", 5);
+	write (1, "rrr\n", 4);
 }
 
 void	sa_two(int *stack_a)

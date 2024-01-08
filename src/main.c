@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 14:08:55 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/08 16:49:25 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 {
 	t_sort	*sort;
 
+	sort = NULL;
+	sort = malloc(sizeof(t_sort));
 	sort->len_a = malloc(sizeof(int));
 	sort->len_b = malloc(sizeof(int));
-	sort = malloc(sizeof(t_sort));
 	*(sort->len_a) = -1;
 	*(sort->len_b) = 0;
 	while (++*(sort->len_a) <= *stack_size_a - 1)
@@ -39,7 +40,7 @@ static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 	else if (*(sort->len_a) > 10 && *(sort->len_a) <= 100)
 		sort_hundret(sort, stack_a, stack_b);
 	else if (*(sort->len_a) > 100)
-		sort_fivehundret();
+		sort_fivehundret(sort, stack_a, stack_b);
 	freeing(sort);
 }
 

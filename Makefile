@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra
 NAME	= push_swap
 
 SRC_PATH = src/
@@ -19,7 +19,8 @@ SRC		= main.c \
 			tiny_sort.c\
 			sort_five.c\
 			sort_ten.c\
-			sort_hundret.c
+			sort_hundret.c\
+			sort_fivehundret.c
 
 
 SRCm	= $(addprefix $(SRC_PATH), $(SRC))

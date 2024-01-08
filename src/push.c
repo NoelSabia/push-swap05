@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 10:59:59 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/25 17:59:49 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 17:18:06 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	pa(int *stack_a, int *stack_b, t_sort *sort)
 		stack_b[*(sort->len_b) - 1] = 0;
 		++*(sort->len_a);
 		--*(sort->len_b);
-		write (1, "pa\n", 4);
+		write (1, "pa\n", 3);
 	}
 }
 

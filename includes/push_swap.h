@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 11:48:09 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 19:41:34 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void			sort_hundret(t_sort *sort, int *stack_a, int *stack_b);
 int				find_keynbr(t_sort *sort, int *stack_a, int n);
 int				find_biggest(t_sort *sort, int *stack_b);
 void			push_back_b(t_sort *sort, int *stack_a, int *stack_b);
+void			sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b);
+int				find_spot_biggest(t_sort *sort, int *stack_a, int *stack_b);
 
 #endif
