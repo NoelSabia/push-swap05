@@ -6,7 +6,7 @@
 /*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/06 11:31:43 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 11:59:58 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 		sort_ten(stack_a, stack_b, sort);
 	else if (*(sort->len_a) > 10 && *(sort->len_a) <= 100)
 		sort_hundret(sort, stack_a, stack_b);
+	else if (*(sort->len_a) > 100)
+		sort_fivehundret();
 	freeing(sort);
 }
 
@@ -61,8 +63,6 @@ int	main(int argc, char *argv[])
 	check_parameters(argc, argv, stack_a, stack_b);
 	if (is_sorted(stack_size_value, stack_a) == 0)
 		push_swap(stack_a, stack_size, stack_b);
-	for (int i = 0; i < 15; i++)
-		printf("%d %d\n", stack_a[i], stack_b[i]);
 	free (stack_a);
 	free (stack_b);
 	return (0);
