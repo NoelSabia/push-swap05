@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_a.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:00:44 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/25 17:37:08 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:10:49 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ra(int *stack_a, t_sort *sort)
+void	ra(int *stack_a, t_sort *sort)
 {
-    int i;
+	int	i;
 	int	m;
-    int temp;
+	int	temp;
 
-    temp = stack_a[0];
-    i = *(sort->len_a) - 1;
+	temp = stack_a[0];
+	i = *(sort->len_a) - 1;
 	m = 0;
-    while (i >=  0)
-    {
-        stack_a[m] = stack_a[m + 1];
-        i--;
+	while (i >= 0)
+	{
+		stack_a[m] = stack_a[m + 1];
+		i--;
 		m++;
-    }
+	}
 	m--;
-    stack_a[m] = temp;
-    write(1, "ra\n", 4);
+	stack_a[m] = temp;
+	write(1, "ra\n", 4);
 }
 
 void	rra(int *stack_a, t_sort *sort)

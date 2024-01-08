@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 12:10:36 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/20 11:58:42 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/08 14:08:23 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	check_parameters(int argc, char *argv[], int *stack_a, int *stack_b)
 	{
 		value = ft_strtoll(argv[i], 10);
 		if (ft_isalpha(argv[i]) == 1 || is_special_sign(argv[i]) == 1
-				|| (value > INT_MAX || value < INT_MIN))
+			|| (value > INT_MAX || value < INT_MIN))
 		{
 			write (1, "Error\n", 7);
 			free (stack_a);

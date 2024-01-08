@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:00:56 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 11:45:59 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:11:40 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void rb(int *stack_b, t_sort *sort)
+void	rb(int *stack_b, t_sort *sort)
 {
-    int i;
+	int	i;
 	int	m;
-    int temp;
+	int	temp;
 
-    temp = stack_b[0];
-    i = *(sort->len_b) - 1;
+	temp = stack_b[0];
+	i = *(sort->len_b) - 1;
 	m = 0;
-    while (i >=  0)
-    {
-        stack_b[m] = stack_b[m + 1];
-        i--;
+	while (i >= 0)
+	{
+		stack_b[m] = stack_b[m + 1];
+		i--;
 		m++;
-    }
+	}
 	m--;
-    stack_b[m] = temp;
-    write(1, "rb\n", 4);
+	stack_b[m] = temp;
+	write(1, "rb\n", 4);
 }
 
 void	rrb(int *stack_b, t_sort *sort)

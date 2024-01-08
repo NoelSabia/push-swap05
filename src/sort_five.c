@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:06:08 by noel              #+#    #+#             */
-/*   Updated: 2024/01/05 17:00:05 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:12:37 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,14 @@ void	sort_a(int *stack_a, t_sort *sort)
 			i = 0;
 		}
 	}
-	if (s_i <= 2)	
+	if (s_i <= 2)
 	{
 		while (stack_a[0] != smallest)
 			ra(stack_a, sort);
 	}
 	else
 	{
-		while (stack_a[0] != smallest)	
+		while (stack_a[0] != smallest)
 			rra(stack_a, sort);
 	}
 }
@@ -92,7 +92,7 @@ int	find_corr_spot(t_sort *sort, int *stack_a, int *stack_b)
 	return (i);
 }
 
-int find_nearest(int arr[500], int len)
+int	find_nearest(int arr[500], int len)
 {
 	int	result;
 	int	i;
@@ -114,5 +114,5 @@ int find_nearest(int arr[500], int len)
 		i++;
 	}
 	i--;
-    return (result);
+	return (result);
 }

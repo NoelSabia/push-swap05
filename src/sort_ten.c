@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_ten.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 15:12:07 by nsabia            #+#    #+#             */
-/*   Updated: 2023/12/31 17:53:15 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:20:06 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,23 @@ void	sort_ten(int *stack_a, int *stack_b, t_sort *sort)
 		pa(stack_a, stack_b, sort);
 }
 
-int find_smallest_int(t_sort *sort)
+int	find_smallest_int(t_sort *sort)
 {
-    int c = 0;
-    int result;
-	
+	int	c;
+	int	result;
+
 	result = sort->stack_a_arr[0];
-    while (c < *(sort->len_a))
-    {
-        if (sort->stack_a_arr[c] < result)
+	c = 0;
+	while (c < *(sort->len_a))
+	{
+		if (sort->stack_a_arr[c] < result)
 		{
-            result = sort->stack_a_arr[c];
+			result = sort->stack_a_arr[c];
 			c = 0;
 		}
-        c++;
-    }
-    return (result);
+		c++;
+	}
+	return (result);
 }
 
 void	rotate_to_top(int i, int *stack_a, int num, t_sort *sort)

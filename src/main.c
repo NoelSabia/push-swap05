@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:45:51 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 11:59:58 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/08 14:08:55 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,20 @@ void	freeing(t_sort *sort)
 
 static void	push_swap(int *stack_a, int *stack_size_a, int *stack_b)
 {
-	t_sort *sort = malloc(sizeof(t_sort));
+	t_sort	*sort;
+
 	sort->len_a = malloc(sizeof(int));
 	sort->len_b = malloc(sizeof(int));
-
+	sort = malloc(sizeof(t_sort));
 	*(sort->len_a) = -1;
 	*(sort->len_b) = 0;
 	while (++*(sort->len_a) <= *stack_size_a - 1)
 		sort->stack_a_arr[*(sort->len_a)] = stack_a[*(sort->len_a)];
 	if (*(sort->len_a) <= 3)
 		tiny_sort(stack_a, sort);
-	else if (*(sort->len_a) >3 &&*(sort->len_a) <= 5)
+	else if (*(sort->len_a) > 3 && *(sort->len_a) <= 5)
 		sort_five(stack_a, stack_b, sort);
-	else if (*(sort->len_a) > 5 && *(sort->len_a)<= 10)
+	else if (*(sort->len_a) > 5 && *(sort->len_a) <= 10)
 		sort_ten(stack_a, stack_b, sort);
 	else if (*(sort->len_a) > 10 && *(sort->len_a) <= 100)
 		sort_hundret(sort, stack_a, stack_b);
