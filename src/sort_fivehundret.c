@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_fivehundret.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:24:20 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/09 09:35:41 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:13 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 	while (c < 8)
 	{
 		i = 0;
-		n = n + n_safe;
+		if (c < 7)
+			n = n + n_safe;
+		else
+			n = *(sort->len_a) + *(sort->len_b) - 1;
 		key_nbr = find_keynbr_fivehundret(sort, stack_a, n);
 		while (i < *(sort->len_a))
 		{
@@ -46,10 +49,10 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 
 int	find_keynbr_fivehundret(t_sort *sort, int *stack_a, int n)
 {
-	int	temp;
-	int	swapped;
-	int	i;
-	int	arr[500];
+	int			temp;
+	int			swapped;
+	int			i;
+	static int	arr[500];
 
 	swapped = 1;
 	i = 0;

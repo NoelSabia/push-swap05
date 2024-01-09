@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_hundret.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:52:53 by noel              #+#    #+#             */
-/*   Updated: 2024/01/09 09:18:34 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/09 13:05:55 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	sort_hundret(t_sort *sort, int *stack_a, int *stack_b)
 	while (c < 4)
 	{
 		i = 0;
-		n = n + n_safe;
+		if (c < 3)
+			n = n + n_safe;
+		else
+			n = *(sort->len_a) + *(sort->len_b) - 1;
 		key_nbr = find_keynbr(sort, stack_a, n);
 		while (i < *(sort->len_a))
 		{
@@ -92,10 +95,10 @@ int	find_biggest(t_sort *sort, int *stack_b)
 
 int	find_keynbr(t_sort *sort, int *stack_a, int n)
 {
-	int	temp;
-	int	swapped;
-	int	i;
-	int	arr[500];
+	int			temp;
+	int			swapped;
+	int			i;
+	static int	arr[500];
 
 	swapped = 1;
 	i = 0;
