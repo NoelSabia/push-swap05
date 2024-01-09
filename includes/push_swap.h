@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/09 09:22:07 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/09 19:31:28 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-
 typedef struct s_sort
 {
 	int	*len_a;
 	int	*len_b;
-	int stack_a_arr[1000];
+	int	stack_a_arr[1000];
 }	t_sort;
 
 void			check_parameters(int argc, char *argv[],
@@ -58,10 +57,10 @@ void			sort(int *stack_a, int *stack_b,
 void			pa(int *stack_a, int *stack_b, t_sort *sort);
 void			pb(int *stack_a, int *stack_b, t_sort *sort);
 void			sa(int *stack_a);
-void			sb(int *stack_b, int stack_size);
+void			sb(int *stack_b);
 void			ss(int *stack_a, int stack_len);
 void			ra(int *stack_a, t_sort *sort);
-void 			rb(int *stack_b, t_sort *sort);
+void			rb(int *stack_b, t_sort *sort);
 void			rr(int *stack_a, int *stack_b, int stack_len);
 void			rra(int *stack_a, t_sort *sort);
 void			rrb(int *stack_b, t_sort *sort);
@@ -69,11 +68,11 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			sb_two(int *stack_b, int stack_size);
 void			sa_two(int *stack_a);
 void			sort_ten(int *stack_a, int *stack_b, t_sort *sort);
-int 			find_smallest_int(t_sort *sort);
+int				find_smallest_int(t_sort *sort);
 void			rotate_to_top(int i, int *stack_a, int num, t_sort *sort);
 void			sort_five(int *stack_a, int *stack_b, t_sort *sort);
 int				find_corr_spot(t_sort *sort, int *stack_a, int *stack_b);
-int 			find_nearest(int arr[500], int len);
+int				find_nearest(int arr[500], int len);
 void			sort_a(int *stack_a, t_sort *sort);
 void			sort_hundret(t_sort *sort, int *stack_a, int *stack_b);
 int				find_keynbr(t_sort *sort, int *stack_a, int n);
@@ -82,5 +81,8 @@ void			push_back_b(t_sort *sort, int *stack_a, int *stack_b);
 void			sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b);
 int				find_spot_biggest(t_sort *sort, int *stack_b);
 int				find_keynbr_fivehundret(t_sort *sort, int *stack_a, int n);
+void			bubble_sort(int *arr, int len);
+void			copy_array(int *stack_a, int *arr, int len);
+int				*arr_bubble_sort(int swapped, t_sort *sort, int *arr);
 
 #endif

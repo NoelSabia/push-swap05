@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:52:53 by noel              #+#    #+#             */
-/*   Updated: 2024/01/09 13:05:55 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/09 19:37:04 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,12 @@ void	sort_hundret(t_sort *sort, int *stack_a, int *stack_b)
 		while (i < *(sort->len_a))
 		{
 			if (stack_a[0] <= key_nbr)
-			{
 				pb(stack_a, stack_b, sort);
-				continue ;
-			}
 			else
+			{
 				ra(stack_a, sort);
-			i++;
+				i++;
+			}
 		}
 		c++;
 	}
@@ -50,27 +49,25 @@ void	sort_hundret(t_sort *sort, int *stack_a, int *stack_b)
 void	push_back_b(t_sort *sort, int *stack_a, int *stack_b)
 {
 	int	i;
+	int	biggest;
+	int	spot;
 
 	while (*(sort->len_b) > 0)
 	{
-		i = find_spot_biggest(sort, stack_b);
-		if (stack_b[0] == find_biggest(sort, stack_b))
-			pa(stack_a, stack_b, sort);
-		if (i < *(sort->len_b) / 2)
-			rb(stack_b, sort);
-		else
-			rrb(stack_b, sort);
+		biggest = find_biggest(sort, stack_b);
+		i = 0;
+		while (stack_b[i] < biggest)
+			i++;
+		spot = i;
+		while (stack_b[0] != biggest)
+		{
+			if (spot < *(sort->len_b) / 2)
+				rb(stack_b, sort);
+			else
+				rrb(stack_b, sort);
+		}
+		pa(stack_a, stack_b, sort);
 	}
-}
-
-int	find_spot_biggest(t_sort *sort, int *stack_b)
-{
-	int	i;
-
-	i = 0;
-	while (stack_b[i] < find_biggest(sort, stack_b))
-		i++;
-	return (i);
 }
 
 int	find_biggest(t_sort *sort, int *stack_b)
@@ -95,36 +92,12 @@ int	find_biggest(t_sort *sort, int *stack_b)
 
 int	find_keynbr(t_sort *sort, int *stack_a, int n)
 {
-	int			temp;
-	int			swapped;
-	int			i;
 	static int	arr[500];
 
-	swapped = 1;
-	i = 0;
 	if (n == *(sort->len_a) / 4)
 	{
-		while (i < *(sort->len_a))
-		{
-			arr[i] = stack_a[i];
-			i++;
-		}
-		while (swapped == 1)
-		{
-			swapped = 0;
-			i = 0;
-			while (i < *(sort->len_a))
-			{
-				if (arr[i] > arr[i + 1])
-				{
-					temp = arr[i];
-					arr[i] = arr[i + 1];
-					arr[i + 1] = temp;
-					swapped = 1;
-				}
-				i++;
-			}
-		}
+		copy_array(stack_a, arr, *(sort->len_a));
+		bubble_sort(arr, *(sort->len_a));
 	}
 	return (arr[n]);
 }

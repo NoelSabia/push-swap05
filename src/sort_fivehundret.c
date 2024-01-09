@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:24:20 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/09 13:10:13 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/09 19:33:37 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 	int	c;
 
 	c = 0;
-	n_safe = *(sort->len_a) / 8;
+	n_safe = *(sort->len_a) / 13;
 	n = 0;
-	while (c < 8)
+	while (c < 13)
 	{
 		i = 0;
-		if (c < 7)
+		if (c < 12)
 			n = n + n_safe;
 		else
 			n = *(sort->len_a) + *(sort->len_b) - 1;
@@ -49,36 +49,82 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 
 int	find_keynbr_fivehundret(t_sort *sort, int *stack_a, int n)
 {
-	int			temp;
 	int			swapped;
 	int			i;
 	static int	arr[500];
 
 	swapped = 1;
 	i = 0;
-	if (n == *(sort->len_a) / 8)
+	if (n == *(sort->len_a) / 13)
 	{
 		while (i < *(sort->len_a))
 		{
 			arr[i] = stack_a[i];
 			i++;
 		}
-		while (swapped == 1)
-		{
-			swapped = 0;
-			i = 0;
-			while (i < *(sort->len_a))
-			{
-				if (arr[i] > arr[i + 1])
-				{
-					temp = arr[i];
-					arr[i] = arr[i + 1];
-					arr[i + 1] = temp;
-					swapped = 1;
-				}
-				i++;
-			}
-		}
+		arr_bubble_sort(swapped, sort, arr);
 	}
 	return (arr[n]);
+}
+
+int	*arr_bubble_sort(int swapped, t_sort *sort, int *arr)
+{
+	int	i;
+	int	temp;
+
+	while (swapped == 1)
+	{
+		swapped = 0;
+		i = 0;
+		while (i < *(sort->len_a))
+		{
+			if (arr[i] > arr[i + 1])
+			{
+				temp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+				swapped = 1;
+			}
+			i++;
+		}
+	}
+	return (arr);
+}
+
+void	copy_array(int *stack_a, int *arr, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		arr[i] = stack_a[i];
+		i++;
+	}
+}
+
+void	bubble_sort(int *arr, int len)
+{
+	int	temp;
+	int	swapped;
+	int	i;
+
+	swapped = 1;
+	i = 0;
+	while (swapped)
+	{
+		swapped = 0;
+		i = 0;
+		while (i < len - 1)
+		{
+			if (arr[i] > arr[i + 1])
+			{
+				temp = arr[i];
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+				swapped = 1;
+			}
+			i++;
+		}
+	}
 }

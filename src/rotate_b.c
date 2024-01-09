@@ -6,7 +6,7 @@
 /*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 11:00:56 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/08 17:16:41 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/09 14:50:47 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,12 @@ void	rrb(int *stack_b, t_sort *sort)
 	write (1, "rrb\n", 4);
 }
 
-void	sb(int *stack_b, int stack_size)
+void	sb(int *stack_b)
 {
 	int	temp;
 
-	if (stack_size >= 2)
-	{
-		temp = stack_b[0];
-		stack_b[0] = stack_b[1];
-		stack_b[1] = temp;
-		write (1, "sb\n", 3);
-	}
+	temp = stack_b[0];
+	stack_b[0] = stack_b[1];
+	stack_b[1] = temp;
+	write (1, "sb\n", 3);
 }
