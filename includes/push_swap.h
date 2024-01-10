@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:02:05 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/09 19:31:28 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/10 12:30:08 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ int				find_keynbr_fivehundret(t_sort *sort, int *stack_a, int n);
 void			bubble_sort(int *arr, int len);
 void			copy_array(int *stack_a, int *arr, int len);
 int				*arr_bubble_sort(int swapped, t_sort *sort, int *arr);
+void			push_to_b(t_sort *sort, int *stack_a, int *stack_b, int key_nbr);
 
 #endif

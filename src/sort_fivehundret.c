@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_fivehundret.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:24:20 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/09 19:33:37 by nsabia           ###   ########.fr       */
+/*   Updated: 2024/01/10 12:28:45 by noel             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 	int	key_nbr;
 	int	n;
 	int	n_safe;
-	int	i;
 	int	c;
 
 	c = 0;
@@ -25,14 +24,24 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 	n = 0;
 	while (c < 13)
 	{
-		i = 0;
 		if (c < 12)
 			n = n + n_safe;
 		else
 			n = *(sort->len_a) + *(sort->len_b) - 1;
 		key_nbr = find_keynbr_fivehundret(sort, stack_a, n);
-		while (i < *(sort->len_a))
-		{
+		push_to_b(sort, stack_a, stack_b, key_nbr);
+		c++;
+	}
+	push_back_b(sort, stack_a, stack_b);
+}
+
+void	push_to_b(t_sort *sort, int *stack_a, int *stack_b, int key_nbr)
+{
+	int	i;
+
+	i = 0;
+	while (i < *(sort->len_a))
+	{
 			if (stack_a[0] <= key_nbr)
 			{
 				pb(stack_a, stack_b, sort);
@@ -41,10 +50,7 @@ void	sort_fivehundret(t_sort *sort, int *stack_a, int *stack_b)
 			else
 				ra(stack_a, sort);
 			i++;
-		}
-		c++;
 	}
-	push_back_b(sort, stack_a, stack_b);
 }
 
 int	find_keynbr_fivehundret(t_sort *sort, int *stack_a, int n)
