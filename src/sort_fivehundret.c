@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_fivehundret.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noel <noel@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nsabia <nsabia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:24:20 by nsabia            #+#    #+#             */
-/*   Updated: 2024/01/10 12:28:45 by noel             ###   ########.fr       */
+/*   Updated: 2024/01/15 12:41:52 by nsabia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void	push_to_b(t_sort *sort, int *stack_a, int *stack_b, int key_nbr)
 	i = 0;
 	while (i < *(sort->len_a))
 	{
-			if (stack_a[0] <= key_nbr)
-			{
-				pb(stack_a, stack_b, sort);
-				continue ;
-			}
-			else
-				ra(stack_a, sort);
-			i++;
+		if (stack_a[0] <= key_nbr)
+		{
+			pb(stack_a, stack_b, sort);
+			continue ;
+		}
+		else
+			ra(stack_a, sort);
+		i++;
 	}
 }
 
@@ -106,31 +106,5 @@ void	copy_array(int *stack_a, int *arr, int len)
 	{
 		arr[i] = stack_a[i];
 		i++;
-	}
-}
-
-void	bubble_sort(int *arr, int len)
-{
-	int	temp;
-	int	swapped;
-	int	i;
-
-	swapped = 1;
-	i = 0;
-	while (swapped)
-	{
-		swapped = 0;
-		i = 0;
-		while (i < len - 1)
-		{
-			if (arr[i] > arr[i + 1])
-			{
-				temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
-				swapped = 1;
-			}
-			i++;
-		}
 	}
 }
